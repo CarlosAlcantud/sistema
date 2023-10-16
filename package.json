@@ -1,0 +1,19 @@
+{
+  "name": "procesos",
+  "version": "1.0.0",
+  "description": "Proyecto de Procesos 2023",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "testW": "jasmine-node servidor",
+    "test": "jasmine-node servidor"
+  },
+  "author": "Carlos Alcantud",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jasmine": "^5.1.0",
+    "jasmine-node": "^3.0.0",
+    "node": "^20.6.0"
+  }
+}
