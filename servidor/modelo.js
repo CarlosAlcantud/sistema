@@ -1,6 +1,8 @@
+const datos = require("./cad.js");
+
 function Sistema(){
     this.usuarios={};
-
+    this.cad = new atos.CAD();
     this.agregarUsuario=function(nick){
         let res={"nick": -1};
         if (!this.usuarios[nick]){
@@ -12,6 +14,18 @@ function Sistema(){
         }
         return res;
     }
+
+
+
+
+    
+    this.obtenerUsuarios = function(email){
+        this.cad.buscarOCrearUsuario(email,function(res){
+            console.log("El usuario"+res.email + " esta registrado en el sistema");
+        })
+
+    }
+
 
     this.obtenerUsuarios=function(){
         return this.usuarios;
@@ -42,6 +56,13 @@ function Sistema(){
             delete this.usuarios[nick];
         }
     }
+
+    this.cad.conectar(function(){
+        console.log("conectado a mongo atlas");
+    });
+
+
+    
    }
 
   
