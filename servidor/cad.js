@@ -6,9 +6,9 @@ function CAD(){
 
     this.usuarios;
 
-    this.buscarOCrearUsuario=function(email,callback){
+    this.buscarOCrearUsuario=function(usr,callback){
         //buscarOCrear(this.usuarios,{email:email},callback);
-        buscarOCrear(this.usuarios,{email:email},callback);
+        buscarOCrear(this.usuarios,usr,callback);
     }
 
 function buscarOCrear(coleccion,criterio,callback)
@@ -26,7 +26,7 @@ function buscarOCrear(coleccion,criterio,callback)
     
     this.conectar=async function(callback){
         let cad=this;
-        let client= new mongo("mongodb+srv://carlosalcantud:<Q9Frfvx6zA0cFf0H>@cluster0.hvpn5fr.mongodb.net/?retryWrites=true&w=majority");
+        let client= new mongo("mongodb+srv://carlosalcantud:UZFXdxIqhmscCxg4@cluster0.j2r5ere.mongodb.net/?retryWrites=true&w=majority");
         await client.connect();
         const database=client.db("sistema");
         cad.usuarios=database.collection("usuarios");
