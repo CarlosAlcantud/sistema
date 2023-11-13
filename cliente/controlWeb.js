@@ -36,14 +36,13 @@ function ControlWeb(){
 
     this.comprobarSesion=function(){
         
-        let nick = $.cookie(clave);
+        let nick = $.cookie("nick");
         if (nick){
             cw.mostrarMsg("Bienvenido al sistema, "+nick);
         }
         else{
             cw.mostrarAgregarUsuario();
-            //cw.mostrarRegistro();
-            //cw.init();
+            cw.init();
         }
         }
 
